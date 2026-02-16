@@ -1,0 +1,67 @@
+.TH ICOSA 1 "2026-02-15" "demomotd" "User Commands"
+.SH NAME
+icosa \- bouncing glenz vector over a checkerboard floor
+.SH SYNOPSIS
+.B icosa
+.RB [ \-h | \-\-help ]
+.SH DESCRIPTION
+.B icosa
+renders a spinning tetrakis hexahedron (the "glenz vector" from demoscene
+tradition) bouncing on a perspective checkerboard floor, inspired by the
+iconic scene from
+.IR "2nd Reality" " (Future Crew, 1993)."
+.PP
+The shape is drawn as a braille-dot wireframe in the alternate screen buffer
+at approximately 30 fps. Physics-based bouncing includes gravity, damping,
+and squash-and-stretch deformation on impact.
+.PP
+Press any key to quit.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Print a help message and exit.
+.SH EXIT STATUS
+.TP
+.B 0
+Normal exit (keypress, signal, or help).
+.TP
+.B 1
+Terminal too small (minimum 20\[mu]10) or unknown option.
+.SH USAGE WITH DEMOMOTD
+.B icosa
+is one of several terminal effects selectable by
+.BR demomotd (1),
+a Fish shell greeting function. When invoked through demomotd, it runs
+inside
+.BR timeout (1)
+for 2\[en]3 seconds and exits cleanly via SIGTERM.
+.PP
+It can also be run standalone:
+.PP
+.RS
+.nf
+timeout 5 icosa
+.fi
+.RE
+.SH RENDERING
+Each terminal cell is mapped to a 2\[mu]4 grid of braille dots (Unicode
+block U+2800\[en]U+28FF), giving an effective resolution of
+.RI 2\[mu] cols " \[mu] 4\[mu]" rows
+pixels.
+Edges are rasterized with Bresenham's line algorithm.
+.PP
+The checkerboard floor uses 256-color background attributes
+(dark grey and light grey) with
+.B 1/t
+perspective projection.
+.SH GEOMETRY
+The tetrakis hexahedron is a Catalan solid with 14 vertices, 36 edges,
+and 24 triangular faces. It can be constructed by raising a shallow pyramid
+on each face of a cube. In the demoscene, this shape (rendered with
+translucent face blending) is known as a "glenz vector."
+.SH SEE ALSO
+.BR demomotd (1),
+.BR timeout (1),
+.BR ansimotd (1)
+.SH AUTHOR
+Built with Claude Code.

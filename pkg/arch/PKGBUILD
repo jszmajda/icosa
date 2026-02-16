@@ -1,0 +1,22 @@
+# Maintainer: Jess Telford <jess at jesstelford dot com>
+pkgname=icosa
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Bouncing glenz vector over a checkerboard floor — 2nd Reality demoscene tribute'
+arch=('x86_64' 'aarch64')
+url='https://github.com/jesstelford/icosa'
+license=('MIT')
+depends=('glibc')
+makedepends=('gcc' 'make')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname-$pkgver"
+    make CFLAGS="$CFLAGS"
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    make install DESTDIR="$pkgdir" PREFIX=/usr
+}
