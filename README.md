@@ -17,7 +17,7 @@ The only dependency is a C compiler and libc (with libm). No ncurses, no
 external libraries.
 
 ```sh
-git clone https://github.com/jesstelford/icosa.git
+git clone https://github.com/jszmajda/icosa.git
 cd icosa
 make
 ```
@@ -59,7 +59,7 @@ makepkg -si
 
 ```sh
 sudo apt install build-essential
-git clone https://github.com/jesstelford/icosa.git
+git clone https://github.com/jszmajda/icosa.git
 cd icosa
 make
 sudo make install
@@ -69,7 +69,7 @@ sudo make install
 
 ```sh
 sudo dnf install gcc make
-git clone https://github.com/jesstelford/icosa.git
+git clone https://github.com/jszmajda/icosa.git
 cd icosa
 make
 sudo make install
@@ -79,7 +79,7 @@ sudo make install
 
 ```sh
 apk add build-base
-git clone https://github.com/jesstelford/icosa.git
+git clone https://github.com/jszmajda/icosa.git
 cd icosa
 make
 make install
