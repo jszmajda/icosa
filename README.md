@@ -1,5 +1,9 @@
 # icosa
 
+<p align="center">
+  <img src="icosa.gif" alt="icosa demo" loop>
+</p>
+
 A bouncing glenz vector over a checkerboard floor, inspired by the iconic
 scene from [2nd Reality](https://en.wikipedia.org/wiki/Second_Reality)
 (Future Crew, 1993).
